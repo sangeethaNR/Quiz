@@ -1,0 +1,14 @@
+h1 , div,.question,ol,li {
+
+   text-align: center;
+   
+}
+.ques_div , .validation
+{
+    display: none;
+
+}
+#choices > div{
+    cursor: pointer;
+    padding: 10px;
+}

@@ -1,0 +1,96 @@
+:root{
+    --textcolor :#dcedc8;
+    --border:3px solid green;
+}
+
+body {
+    background-image: url("../images/quiz.jpg");
+    height: auto;
+	width: 90%;
+    background-size: cover;
+	
+}
+button,.submit_btn{
+    cursor: pointer;
+}
+ div,.question,ol,li {
+
+   text-align: center;
+   
+}
+h1{
+    text-align: center;
+    margin-top :30px;
+    padding :10px;
+}
+.ques_div , .validation, #goback,#clearscore
+{
+    display: none;
+
+}
+#choices > div{
+    cursor: pointer;
+    padding: 10px;
+}
+#high_score{
+    float: left;
+    cursor: pointer;
+}
+.rules{
+    
+    color:var(--textcolor);
+    padding: 10px;
+    margin-bottom: 25px;
+   
+	
+
+}
+.display{
+    color:var(--textcolor);
+}
+/* #timer{
+    float: right;
+} */
+.finalScore_div
+{
+    display: none;
+    margin-top :30px;
+    padding-top:30px;
+    color:var(--textcolor);}
+
+header text{
+    float: right;
+   
+    /* display: inline-block; */
+}
+.startbt {
+    margin: auto;
+    width: 20%;
+    border: var(--border);
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+  }
+  .btn_class{
+    margin-top :180px;
+    margin-left: 210px;
+    width: 15%;
+    border: var(--border);
+    padding: 10px;
+    color: black;
+    border-radius: 10px; 
+  }
+  
+  .submit_btn{
+    margin: 10px;
+    width: 15%;
+    border: var(--border);
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+  }
+  header,#view{
+    color: #fff9c4;
+    
+  }
+  

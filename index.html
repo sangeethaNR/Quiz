@@ -5,32 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1> Coding Quiz Challenge</h1>
+        <h4><div id="high_score">View HighScores</div></h4>
+        <h4><text id="timer_text" style="margin-left: 10px;">Time:<text id="timer">200</text></text></h4>
+        <h1  class="display" style="margin: 10px;"> Coding Quiz Challenge</h1><br/>
+       
     </header>
-    <div>
+    <div class=' rules display'>
     <p>Try to answer the following code-related questions within the time limit.<br>
         keep in mine that incorrect answers will penalize your score time by 10 seconds.
      </p>
     </div>
-    <div>
-    <button class="startbtn" id="startbtn">Start Quiz </button>
+    <div id="container_div" class= "display" >
+    <button class="startbt display" id="startbtn" >Start Quiz </button>
    
-        <div id="question_div" class="question_div"> </div>
+        <div id="question_div" class="question_div display"> </div>
 
-         <div id="choices">
-            <div id="choiceA" class="choice_1">  </div>
-            <div id="choiceB"></div>
-            <div id="choiceC"></div>
+         <div id="choices" class="display">
+            <div id="A" class="choice" onclick="checkAns('A')">  </div>
+            <div id="B" class="choice" onclick="checkAns('B')"></div>
+            <div id="C" class="choice" onclick="checkAns('C')"></div>
         </div>
 
-          
+         
        <textarea id="validation" class="validation"></textarea> 
   
 </div>
-<script src="script.js"></script>
+<div class="finalScore_div" >
+<h2>ALL Done!</h2>
+</div>
+<div class="finalScore_div">
+    Your final Score is <span id="score_span"></span>
+</div>
+<div class="finalScore_div">
+    Enter your initials  <textarea id="initial" style="margin-left: 10px;"></textarea>
+    <br/>
+    <input id="submit_btn" type="submit" class= "submit_btn">
+</div>
+<div id="view"></div>
+<button id="goback" class="btn_class">Go Back</button>
+<button id="clearscore" class="btn_class">Clear Highscore</button>
+
+<script src="assets/script/script.js"></script>
 </body>
 </html>

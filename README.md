@@ -18,7 +18,7 @@
   click on this [link](https://sangeethanr.github.io/Quiz/index.html)
 
   The landing page looks like below
-      ![landing Page image](/Assets/images/Screenshot.png)
+      ![landing Page image](/assets/images/Screenshot.png)
 
  ## Technologies Used
   

@@ -12,6 +12,7 @@ var high_score = document.querySelector('#high_score');
 var submit_btn = document.getElementById('submit_btn');
 var goback = document.getElementById('goback');
 var clearscore = document.getElementById('clearscore');
+var validation_text =  document.getElementById('validation');
 var score = 0;
 var secondsLeft = 200;
 // var timer_count = 200;
@@ -96,6 +97,7 @@ function renderQuestions() {
 init();
 function init() {
     start_btn.setAttribute('style', 'display:block');
+  
    
 }
 // click event for 'start quiz' button
@@ -118,11 +120,14 @@ function checkAns(answer) {
 
     if (questions[runningquestionindex].correct == answer) {
         score += 10;
-
+        validation_text.setAttribute('style','display:block;margin-left:750px;');
+        validation_text.innerHTML = 'Correct!'
     }
     else {
         score += 0;
         secondsLeft -= 10;
+        validation_text.setAttribute('style','display:block;margin-left:750px;');
+        validation_text.innerHTML="Wrong";
 
     }
 
@@ -200,7 +205,7 @@ goback.addEventListener("click", function () {
     choices.setAttribute('style', 'display:none');
     runningquestionindex = 0;
     timer_div.innerHTML =200;
-
+    validation_text.setAttribute('style', 'display:none');
 });
 
 //function for clearscore click event
@@ -214,6 +219,7 @@ clearscore.addEventListener("click", function () {
     document.querySelector("#initial").value = ''
     score = 0;
     document.getElementById("view").style = 'display:none';
+    validation_text.setAttribute('style', 'display:none');
 });
 
 
@@ -238,8 +244,8 @@ high_score.addEventListener("click", function () {
 
     if (document.querySelector("#initial").value != 0) {
 
-        document.getElementById("view").innerHTML = "<h1> HighScores </h1> <br/> <h3> 1." + document.querySelector("#initial").value + '\t' + score + "</h4>";
+        document.getElementById("view").innerHTML = "<h1> HighScores </h1> <br/> <h2> <pre> 1.  "  + document.querySelector("#initial").value + "  " +score + "</pre></h2>";
 
     }
-
+    validation_text.setAttribute('style', 'display:none');
 });

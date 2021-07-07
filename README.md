@@ -15,7 +15,7 @@
   The initial and the score will be stored and when 'highScore' button is clicked the initial and the score will be displayed.
   'Clear Score' will clear the user initial and the store it in the local storage.
   The 'Go Back' button will navigate to the main page where the 'start quiz' will be displayed.
-  click on this [link](https://sangeethanr.github.io/Quiz/index.html)
+  click on this [link](https://sangeethanr.github.io/Quiz/)
 
   The landing page looks like below
       ![landing Page image](/assets/images/Screenshot.png)
@@ -69,7 +69,7 @@ $ git clone git@github.com:sangeethaNR/Quiz .git
  
   Link to the deployed application https://github.com/sangeethaNR/Quiz
   
-  Landing Page  https://sangeethanr.github.io/Quiz/index.html
+  Landing Page  https://sangeethanr.github.io/Quiz/
 
   
   ## Credits

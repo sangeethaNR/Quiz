@@ -13,6 +13,7 @@ var submit_btn = document.getElementById('submit_btn');
 var goback = document.getElementById('goback');
 var clearscore = document.getElementById('clearscore');
 var validation_text =  document.getElementById('validation');
+
 var score = 0;
 var secondsLeft = 200;
 // var timer_count = 200;
@@ -156,8 +157,9 @@ function checkAns(answer) {
 
 submit_btn.addEventListener("click", function () {
     var initial = document.querySelector("#initial").value;
-
-    if (initial == '' || !isNaN(initial)) {
+    var regEx = /^[A-Za-z]+$/;
+  
+    if (!(regEx.test(initial))) {
         window.alert("please enter a valid input");
         document.querySelector("#initial").value = '';
 
@@ -242,9 +244,9 @@ function setTime() {
 //function for 'high score' click event
 high_score.addEventListener("click", function () {
 
-    if (document.querySelector("#initial").value != 0) {
+    if (initial.value != 0) {
 
-        document.getElementById("view").innerHTML = "<h1> HighScores </h1> <br/> <h2> <pre> 1.  "  + document.querySelector("#initial").value + "  " +score + "</pre></h2>";
+        document.getElementById("view").innerHTML = "<h1> HighScores </h1> <br/> <h2> <pre> 1.  "  + initial.value + "  " +score + "</pre></h2>";
 
     }
     validation_text.setAttribute('style', 'display:none');

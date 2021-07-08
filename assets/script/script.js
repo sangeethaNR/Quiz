@@ -19,7 +19,7 @@ var secondsLeft = 200;
 // var timer_count = 200;
 const questionTime = 10;
 
-var ScoreBoard = JSON.parse(localStorage.getItem(ScoreBoard));
+
 // // questions for the quiz
 const questions = [
 
@@ -171,7 +171,7 @@ submit_btn.addEventListener("click", function () {
         }
         //stores in local storage
 
-        localStorage.setItem("ScoreBoard", JSON.stringify(score_board));
+        localStorage.setItem("score_board", JSON.stringify(score_board));
 
         //hide the initial and score textarea
 
@@ -188,7 +188,7 @@ submit_btn.addEventListener("click", function () {
 
 //click event for 'go back' button
 
-goback.addEventListener("click", function () {
+var go_back_fun = goback.addEventListener("click", function () {
 
     score = 0;
     initial.value = '';
@@ -243,11 +243,18 @@ function setTime() {
 }
 //function for 'high score' click event
 high_score.addEventListener("click", function () {
+    var last_score =JSON.parse(localStorage.getItem("score_board"));
+    
+validation_text.setAttribute('style', 'display:none');
+document.getElementById("view").setAttribute('style', 'display:block');
+console.log('last_score.initials'+ last_score.initials);
+        document.getElementById("view").innerHTML = "<h1> HighScores </h1> <br/> <h2> <pre> 1.  "  + last_score.initials + "  " +last_score.highscore + "</pre></h2>";
 
-    if (initial.value != 0) {
+        var elements = document.querySelectorAll(".display");
 
-        document.getElementById("view").innerHTML = "<h1> HighScores </h1> <br/> <h2> <pre> 1.  "  + initial.value + "  " +score + "</pre></h2>";
-
-    }
-    validation_text.setAttribute('style', 'display:none');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].setAttribute('style', 'display:none');
+        }
+        goback.setAttribute('style','display:block');
+        go_back_fun;
 });

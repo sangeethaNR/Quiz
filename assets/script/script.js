@@ -1,8 +1,8 @@
 
 
-var choice1 = document.querySelector('#A');
-var choice2 = document.querySelector('#B');
-var choice3 = document.querySelector('#C');
+var choice1 = document.querySelector('#optionA');
+var choice2 = document.querySelector('#optionB');
+var choice3 = document.querySelector('#optionC');
 var choices = document.querySelector('#choices');
 var question_div = document.querySelector('#question_div');
 var start_btn = document.getElementById("startbtn");
@@ -16,11 +16,11 @@ var validation_text =  document.getElementById('validation');
 
 var score = 0;
 var secondsLeft = 200;
-// var timer_count = 200;
+
 const questionTime = 10;
 
 
-// // questions for the quiz
+ // questions for the quiz
 const questions = [
 
     {
@@ -84,7 +84,7 @@ let lasatquestionindex = questions.length - 1;
 let runningquestionindex = 0;
 // function to get questions from array and display it in the webpage 
 
-function renderQuestions() {
+function buildQuestions() {
     start_btn.setAttribute('style', 'display:none');
 
     let q = questions[runningquestionindex];
@@ -109,7 +109,7 @@ start_btn.addEventListener("click", function (event) {
     question_div.setAttribute('style', 'display:block');
     choices.setAttribute('style', 'display:block');
     if (runningquestionindex <= lasatquestionindex) {
-        renderQuestions();
+        buildQuestions();
     }
 
 });
@@ -117,7 +117,7 @@ start_btn.addEventListener("click", function (event) {
 
 //function to check if the selected answer is correct or not,score and time gets updated with answer selected
 
-function checkAns(answer) {
+function ansCheck(answer) {
 
     if (questions[runningquestionindex].correct == answer) {
         score += 10;
@@ -135,7 +135,7 @@ function checkAns(answer) {
     if (runningquestionindex < lasatquestionindex) {
         runningquestionindex++;
 
-        renderQuestions();
+        buildQuestions();
     }
     else {
         var elements = document.querySelectorAll(".display");
@@ -255,6 +255,6 @@ console.log('last_score.initials'+ last_score.initials);
         for (var i = 0; i < elements.length; i++) {
             elements[i].setAttribute('style', 'display:none');
         }
-        goback.setAttribute('style','display:block');
+        goback.setAttribute('style','display:inline-block');
         go_back_fun;
 });

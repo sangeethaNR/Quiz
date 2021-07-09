@@ -82,8 +82,10 @@ const questions = [
 
 let lasatquestionindex = questions.length - 1;
 let runningquestionindex = 0;
-// function to get questions from array and display it in the webpage 
 
+init();
+
+// function to get questions from array and display it in the webpage 
 function buildQuestions() {
     start_btn.setAttribute('style', 'display:none');
 
@@ -95,7 +97,7 @@ function buildQuestions() {
 
 }
 
-init();
+
 function init() {
     start_btn.setAttribute('style', 'display:block');
   
@@ -104,7 +106,8 @@ function init() {
 // click event for 'start quiz' button
 
 start_btn.addEventListener("click", function (event) {
-
+secondsLeft=200;
+timer_div.textContent=200;
     setTime();
     question_div.setAttribute('style', 'display:block');
     choices.setAttribute('style', 'display:block');
@@ -207,6 +210,7 @@ var go_back_fun = goback.addEventListener("click", function () {
     choices.setAttribute('style', 'display:none');
     runningquestionindex = 0;
     timer_div.innerHTML =200;
+    secondsLeft =200;
     validation_text.setAttribute('style', 'display:none');
 });
 
@@ -230,6 +234,7 @@ clearscore.addEventListener("click", function () {
 function setTime() {
     // Sets interval in variable
     var timerInterval = setInterval(function () {
+      
         secondsLeft--;
         timer_div.textContent = secondsLeft;
         if (secondsLeft === 0 || (runningquestionindex >= lasatquestionindex)) {

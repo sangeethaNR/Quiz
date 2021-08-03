@@ -182,7 +182,21 @@ submit_btn.addEventListener("click", function () {
         for (var k = 0; k < final_scorediv.length; k++) {
             final_scorediv[k].setAttribute('style', 'display:none');
         }
-                //display 'go back' and 'clear score' button
+        var last_score =JSON.parse(localStorage.getItem("score_board"));
+    
+        validation_text.setAttribute('style', 'display:none');
+        document.getElementById("view").setAttribute('style', 'display:block');
+        console.log('last_score.initials'+ last_score.initials);
+                document.getElementById("view").innerHTML = "<h1> HighScores </h1> <br/> <h2> <pre> 1.  "  + last_score.initials + "  " +last_score.highscore + "</pre></h2>";
+        
+                var elements = document.querySelectorAll(".display");
+        
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].setAttribute('style', 'display:none');
+                }
+                goback.setAttribute('style','display:inline-block');
+                go_back_fun;
+        //display 'go back' and 'clear score' button
 
         clearscore.style = "display:inline-block";
          goback.style = "display:inline-block";

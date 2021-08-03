@@ -4,7 +4,7 @@
 
  This project is a timed codeing quiz with multiple-choice questions.  This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code and the score is stored in local storage.   
  The game rules are
-  1. User sholud answer all the questions before the given time.
+  1. User should answer all the questions before the given time.
   2. For each incorrect answer  will penalize your score time by 10 seconds.
 
   The user is given set of multiple choice questions when clicking on the start quiz button.

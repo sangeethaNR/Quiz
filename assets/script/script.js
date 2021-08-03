@@ -182,10 +182,10 @@ submit_btn.addEventListener("click", function () {
         for (var k = 0; k < final_scorediv.length; k++) {
             final_scorediv[k].setAttribute('style', 'display:none');
         }
-        //display 'go back' and 'clear score' button
+                //display 'go back' and 'clear score' button
 
         clearscore.style = "display:inline-block";
-        goback.style = "display:inline-block";
+         goback.style = "display:inline-block";
     }
 });
 
